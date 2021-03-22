@@ -8,6 +8,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#fffffe",
     padding: theme.spacing(8, 0, 8),
   },
+  heroContent: {
+    padding: theme.spacing(0, 0, 10)
+  },
+  infoContent: {
+    padding: theme.spacing(10, 0, 0)
+  },
   homeButtons: {
     marginTop: theme.spacing(4),
   },

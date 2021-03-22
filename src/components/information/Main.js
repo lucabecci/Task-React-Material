@@ -6,7 +6,7 @@ const Main = () => {
   const classes = useStyles();
   return (
     <div>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" className={classes.infoContent}>
         <Grid container spacing={0} justify="space-evenly">
           <Grid item>
             <Container maxWidth="sm">

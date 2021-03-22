@@ -22,7 +22,7 @@ const Home = () => {
   }
   return (
     <Fragment>
-      <Container maxWidth="sm">
+      <Container maxWidth="sm" className={classes.heroContent}>
         <Typography
           component="h1"
           variant="h3"
@@ -57,7 +57,6 @@ const Home = () => {
         </div>
       </Container>
       <Divider
-        className={classes.divider}
       ></Divider>
       <Main/>
     </Fragment>
