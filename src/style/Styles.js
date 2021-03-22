@@ -17,6 +17,14 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: "#ffff33",
   },
+  images:{
+    [theme.breakpoints.down('xs')]:{
+      height: '100%',
+      width: '100%',
+    },
+    width: '600px',
+    height: '470px'
+  },
 }));
 
 export default useStyles;

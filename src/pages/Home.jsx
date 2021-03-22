@@ -1,12 +1,25 @@
-import { Container, Divider, Grid, Typography } from "@material-ui/core";
+import { Button, Container, Divider, Grid, Typography } from "@material-ui/core";
 import useStyles from "../style/Styles";
-import { Fragment } from "react";
-import ContainedButton from "../components/butttons/ContainedButton";
-import OutlinedButton from "../components/butttons/OutlinedButton";
+import { Fragment, useState } from "react";
 import Main from "../components/information/Main";
 
 const Home = () => {
+  const [primary, setPrimary] = useState('contained')
+  const [second, setSecond] = useState('outlined')
   const classes = useStyles();
+
+  const changeState = (e) => {
+    e.preventDefault()
+    if(primary === 'contained'){
+      setPrimary('outlined')
+      setSecond('contained')
+      return
+    }else {
+      setPrimary('contained')
+      setSecond('outlined')
+      return
+    }
+  }
   return (
     <Fragment>
       <Container maxWidth="sm">
@@ -27,10 +40,18 @@ const Home = () => {
         <div className={classes.homeButtons}>
           <Grid container spacing={2} justify="center" >
             <Grid item>
-              <ContainedButton color="primary" information="Task Section" />
+            <Button 
+                variant={primary}
+                color="primary" 
+                onClick={(e) => changeState(e)} 
+              >Home Section</Button>
             </Grid>
             <Grid item>
-              <OutlinedButton color="primary" information="About Section" />
+              <Button 
+                variant={second}
+                color="primary" 
+                onClick={(e) => changeState(e)} 
+              >Task Section</Button>
             </Grid>
           </Grid>
         </div>
