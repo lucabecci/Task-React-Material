@@ -27,9 +27,9 @@ const Main = () => {
           </Grid>
           <Grid item>
             <Container maxWidth="sm" fixed>
-              <Paper variant="outlined">
+              
                 <img className={classes.images} alt='tasks' src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80" />
-              </Paper>
+              
             </Container>
           </Grid>
         </Grid>
