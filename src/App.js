@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import { ThemeProvider } from "@material-ui/core";
+import Navbar from "./components/Navbar";
+import useStyles from "./style/Styles";
+import theme from "./style/Theme";
+import Home from "./pages/Home";
+import Task from "./pages/Task";
+import Footer from "./components/Footer";
 
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Navbar />
+        <main>
+          <div className={classes.mainContent}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/Task" component={Task} />
+            </Switch>
+          </div>
+        </main>
+        <Footer />
+      </Router>
+    </ThemeProvider>
   );
 }
 
